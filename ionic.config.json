@@ -1,0 +1,7 @@
+{
+  "name": "Nice",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
