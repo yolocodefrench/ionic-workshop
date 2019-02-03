@@ -28,6 +28,8 @@ export class HomePage {
       maxZoom: 10
     }).on('locationfound', (e) => {
       console.log('found you');
+      }).on('locationerror', (e) => {
+        console.log('didn\'t found you');
       })
   }
 
