@@ -9,20 +9,19 @@ import { PlaceComponent} from '../../components/place/place';
   selector: 'page-home',
   templateUrl: 'home.html'
 })
-export class HomePage implements OnInit{
+export class HomePage{
   @ViewChild('map') mapContainer: ElementRef;
   map: any;
+  places :PlaceComponent[];
   constructor( menu: MenuController, private navCtrl: NavController, private placeProvider: PlaceProvider) {
     menu.enable(true);
-  }
-
-  ngOnInit(){
   }
   ionViewDidEnter() {
     this.loadmap();
     let places : Promise<PlaceComponent[]> = this.placeProvider.getAllPlaces();
     places.then((data:any) =>{
-      data.forEach(e => {
+      this.places = data;
+      this.places.forEach(e => {
         console.log(e)
         leaflet.marker([e.latitude, e.longitude],{
           icon: new leaflet.DivIcon({
@@ -57,7 +56,10 @@ export class HomePage implements OnInit{
   }
 
   markerOnClick(){
-    console.log(this)
+  }
+
+  loadPlace(id){
+
   }
 
 }

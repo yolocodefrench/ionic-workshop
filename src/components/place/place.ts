@@ -15,15 +15,15 @@ export class PlaceComponent {
   description: string;
   latitude: number;
   longitude: number;
-  image: string;
-  nom: string;
+  path: string;
+  name: string;
 
-  constructor(description, latitude, longitude, image, nom) {
+  constructor(description, latitude, longitude, path, name) {
     this.description = description;
     this.latitude = latitude;
     this.longitude = longitude;
-    this.image = image;
-    this.nom = nom;
+    this.path = path;
+    this.name = name;
   }
 
 }
