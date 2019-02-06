@@ -14,15 +14,27 @@
 
 <ion-content>
   <div id="map" style="width:100%; height:100%;"></div>
-    <div id="caroussel">
-      <ion-card  *ngFor="let place of places">
-        <img src={{place.pictures[0].path}}/>
-        <ion-card-content>
-        
-          <ion-card-title>
-            {{place.name}}
-            </ion-card-title>
-        </ion-card-content>
-      </ion-card>
-    </div>
+  <div id="bottom">
+      <div id="caroussel">
+          
+          <ion-card  *ngFor="let place of places">
+            <div class="place-info">
+                <ion-card-header>
+                    <ion-card-title>
+                      {{place.name}}
+                    </ion-card-title>
+                  </ion-card-header>
+                  
+                  <ion-card-content>
+                    <p>{{place.address}}</p>
+                  </ion-card-content>
+      
+                  
+            </div>
+            <img src={{place.pictures[0].path}}/>
+            
+          </ion-card>
+        </div>
+  </div>
+  
 </ion-content>

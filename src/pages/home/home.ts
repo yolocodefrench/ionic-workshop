@@ -25,9 +25,9 @@ export class HomePage{
         console.log(e)
         leaflet.marker([e.latitude, e.longitude],{
           icon: new leaflet.DivIcon({
-              className: 'my-div-icon',
+              className: 'map-marker',
               html: '<img src="assets/imgs/point.svg" />'+
-                    '<span class="my-div-span">'+e.name+'</span>'
+                    '<span class="marker-name">'+e.name+'</span>'
           })}).addTo(this.map);
       });
     }).catch((error:Error ) =>{
@@ -40,7 +40,7 @@ export class HomePage{
  
   loadmap() {
     this.map = leaflet.map("map").fitWorld();
-    leaflet.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    leaflet.tileLayer('http://a.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png ', {
       attributions: 'www.tphangout.com',
       maxZoom: 60
     }).addTo(this.map);
